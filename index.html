@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Insurance Claim Prediction</title>
+  <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Arimo" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Hind:300" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/stylenew.css') }}">
+</head>
+<body>
+  <div class="login">
+    <h1>Insurance Claim Prediction</h1>
+    <form action="{{ url_for('predict') }}" method="POST">
+      <input type="number" name="Age" placeholder="Age" required="required" />
+      <select name="gender" required="required">
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+      <input type="number" name="BMI" placeholder="BMI" required="required" step="0.1" />
+      <input type="number" name="Steps" placeholder="Steps" required="required" />
+      <input type="number" name="cd" placeholder="Children" required="required" />
+      <select name="smoker" required="required">
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+      </select>
+      <input type="number" name="charges" placeholder="Charges" required="required" step="0.01" />
+      <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+  </div>
+</body>
+</html>
